@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="#" id="logo">Evolve Yoga path</a>
+
+        <!-- Hamburger Icon -->
+        <div id="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html">home</a>
+            <a href="#" id="classLink">class</a>
+            <a href="#" id="eventLink">events</a>
+            <a href="#" id="trainerLink">Trainers</a>
+            <a href="#" id="shopLink">Shop</a>
+            <a href="#" id="featuresLink">Features</a>
+            <a href="#contactUsSection">Contact</a>
+        </nav>
+
+
+       <!-- Modal Structure -->
+       <div id="classModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 style="text-align: center; font-size: 25px">Our Yoga Classes</h2><br>
+            <p style="font-size: 15px;">Explore a variety of classes designed for all levels, from beginners to advanced practitioners. Join us to find balance, flexibility, and inner peace!</p>
+            
+            <!-- Images Section -->
+            <div class="images">
+                <img src="./imag/young-women-men-yoga-class-meditation-exercises-lotus-pose-relaxation-healthy-lifestyle-fitness-club-copy-space.jpg" alt="Yoga Class 1" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+                <img src="./imag/trainer-assisting-group-people-with-lotus-position.jpg" alt="Yoga Class 2" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+                <img src="./imag/woman-digital-disconnecting-home-by-doing-yoga.jpg" alt="Yoga Class 3" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            </div>
+
+             <!-- Register Button -->
+            <button id="registerButton" style="width: 100%; padding: 10px; margin-top: 20px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+            Register Now
+            </button>
+
+
+        <!-- Registration Form (Initially Hidden) -->
+        <div id="classRegistrationForm" style="display: none; margin-top: 20px;">
+            <h3>Register for the Class</h3>
+            <form id="classRegistration">
+                <label for="className">Class Name:</label>
+                <input type="text" id="className" name="className" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <button type="submit" style="width: 100%; padding: 10px; margin-top: 10px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+        </div>
+    </div>
+
+
+    <!-- Event Modal Structure -->
+<div id="eventModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="closeEventModal">&times;</span>
+        <h2 style="text-align: center; font-size: 25px">Upcoming Events</h2><br>
+        <p style="font-size: 15px;">Join us for our upcoming events designed to deepen your yoga practice and foster community. Check out what we have in store! we partnered with central government on international yoga day!!</p>
+        
+        <!-- Images Section for Events -->
+        <div class="images">
+            <img src="./images/good.jpg" alt="Event 1" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            <img src="./images/dallas.png" alt="Event 2" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            <img src="./images/images.jpeg" alt="Event 3" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+        </div>
+
+        <!-- Sign Up Button -->
+        <button id="signupButton" style="width: 100%; padding: 10px; margin-top: 20px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+            Sign Up for Events
+        </button>
+         
+        <!-- Sign-Up Form (Initially Hidden) -->
+        <div id="signupForm" style="display: none; margin-top: 20px;">
+            <h3>Sign Up for the Event</h3>
+            <form id="eventRegistrationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <button type="submit" style="width: 100%; padding: 10px; margin-top: 10px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+
+<!-- Trainers Modal Structure -->
+<div id="trainerModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="closeTrainerModal">&times;</span>
+        <h2  style="text-align: center; font-size: 25px">Meet Our Trainers</h2>
+        <p style="font-size: 15px;">Our skilled trainers are dedicated to helping you achieve your goals. Get to know them and find the right fit for your yoga journey!</p>
+        
+        <!-- Images Section for Trainers -->
+        <div class="images">
+            <img src="./images/train.jpg" alt="Trainer 1" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            <img src="./images/teacher.jpg" alt="Trainer 2" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            <img src="./images/teacher.jpg" alt="Trainer 3" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+        </div>
+
+        <!-- Sign Up Button -->
+        <button id="trainerSignupButton" style="width: 100%; padding: 10px; margin-top: 20px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+            Sign Up with a Trainer
+        </button>
+
+        <!-- Trainer Sign-Up Form (Initially Hidden) -->
+        <div id="trainerSignupForm" style="display: none; margin-top: 20px;">
+            <h3>Sign Up with a Trainer</h3>
+            <form id="trainerRegistrationForm">
+                <label for="trainerName">Trainer Name:</label>
+                <input type="text" id="trainerName" name="trainerName" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="trainerUserName" name="trainerUserName" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="trainerEmail" name="trainerEmail" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <button type="submit" style="width: 100%; padding: 10px; margin-top: 10px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Shop Modal Structure -->
+<div id="shopModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="closeShopModal">&times;</span>
+        <h2 style="text-align: center; font-size: 25px">Shop Our Yoga Essentials</h2>
+        <p style="font-size: 15px;">Discover a selection of high-quality yoga mats, apparel, and accessories to enhance your practice.</p>
+        
+        <!-- Images Section for Products -->
+        <div class="images">
+            <img src="./images/shop.jpg" alt="Product 1" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            <img src="./images/rack.jpg" alt="Product 2" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            <img src="./images/shpps.jpeg" alt="Product 3" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+        </div>
+
+        <!-- Purchase Button -->
+        <button id="purchaseButton" style="width: 100%; padding: 10px; margin-top: 20px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+            Purchase Now
+        </button>
+
+        <!-- Purchase Form (Initially Hidden) -->
+        <div id="purchaseForm" style="display: none; margin-top: 20px;">
+            <h3>Purchase Product</h3>
+            <form id="shopPurchaseForm">
+                <label for="product">Product Name:</label>
+                <input type="text" id="product" name="product" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="buyerName">Name:</label>
+                <input type="text" id="buyerName" name="buyerName" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="buyerEmail">Email:</label>
+                <input type="email" id="buyerEmail" name="buyerEmail" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <button type="submit" style="width: 100%; padding: 10px; margin-top: 10px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Features Modal Structure -->
+<div id="featuresModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="closeFeaturesModal">&times;</span>
+        <h2 style="text-align: center; font-size: 25px">Our Key Features</h2>
+        <p style="font-size: 15px;">Explore the unique features we offer to enhance your yoga experience, yogicfood-diet, from personalized sessions to advanced tools.</p>
+        
+        <!-- Feature Images Section -->
+        <div class="images">
+            <img src="./images/mindfulness.webp" alt="Feature 1" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            <img src="./images/Yogic-Diet2.jpg" alt="Feature 2" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+            <img src="./images/well.jpeg" alt="Feature 3" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;">
+        </div>
+
+        <!-- Learn More Button -->
+        <button id="learnMoreButton" style="width: 100%; padding: 10px; margin-top: 20px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+            Learn More
+        </button>
+
+        <!-- Learn More Form (Initially Hidden) -->
+        <div id="learnMoreForm" style="display: none; margin-top: 20px;">
+            <h3>Learn More About Our Features</h3>
+            <form id="featuresForm">
+                <label for="featureInterest">Feature of Interest:</label>
+                <input type="text" id="featureInterest" name="featureInterest" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="userName">Name:</label>
+                <input type="text" id="userName" name="userName" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" required style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <button type="submit" style="width: 100%; padding: 10px; margin-top: 10px; background-color: #D6B5D9; color: #311D3F; border: none; border-radius: 5px; cursor: pointer;">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+        <div class="icon">
+            <div id="menubar" class="fas fa-bar"></div>
+            <div id="user" class="fas fa-user"></div>
+            <div id="search" class="fas fa-search"></div>
+
+        </div>
+
+        <div class="search-form">
+            <div class="inner-form">
+                <input type="email" name="" id="" placeholder="your email">
+                <input type="password" name="" id="" placeholder="your password">
+            </div>
+        </div>
+
+        <div class="searchbar">
+            <div class="inner-searchbar">
+                <input type="search" placeholder="search......">
+            </div>
+        </div>
+
+    </header>
+
+
+<div id="home" class="back">
+    <div class="mian-home">
+        <div class="inner-home">
+            <img src="imag/bg2.png" alt="">
+        </div>
+
+        <div class="inner-home">
+            <div class="inner-content">
+                <h2>Today Beginings </h2>
+                <p>The Journey to a new you </p>
+                <a href="#">Start a Free trail</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="our-classes">
+
+    <h1>our classes</h1>
+
+    <div class="main-class">
+        <div class="inner-class">
+            <img src="imag/a1.jpg" alt="">
+            <div class="class-content">
+                <h2>newbie class</h2>
+                <p>Welcome to Beginner’s Bliss Yoga! This class is designed to help you find calm, flexibility, and focus, whether you're new to yoga or just getting back on the mat. We’ll guide you through gentle movements and simple breathing exercises to help you relax, recharge, and reconnect with your body. No experience needed—just bring yourself and an open mind! Let’s start your journey toward balance, peace, and strength. 🧘‍♀️✨</p>
+                <a href="#">Learn More </a>
+            </div>
+        </div>
+
+        <div class="inner-class">
+            <img src="imag/a2.jpg" alt="">
+            <div class="class-content">
+                <h2>Essence of yin yoga </h2>
+                <p>Essence of Yin invites you to slow down, unwind, and journey inward. In this soothing, meditative practice, each pose is held for an extended period, allowing your body to gently open and release. It’s the perfect balance to a fast-paced life, offering deep relaxation, flexibility, and calm. Breathe deeply, connect with your inner self, and experience the true essence of yin.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+
+        <div class="inner-class">
+            <img src="imag/a4.jpg" alt="">
+            <div class="class-content">
+                <h2>Mind body harmony</h2>
+                <p>Find your balance and reconnect with yourself in this calming, restorative yoga class. Through gentle movements and mindful breathing, Mind & Body Harmony helps you release tension, quiet the mind, and realign with inner peace. Perfect for all levels, this class invites you to nurture both body and spirit, creating a sanctuary of calm within.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="our-instructor">
+    <h1>Our instructor</h1>
+    <div class="main-instructor">
+        <div class="inner-instructor">
+            <div class="inner-content-instructor">
+                <h2>best <br> Instructor</h2>
+            <p>Meet our incredible yoga instructors—passionate, skilled, and dedicated to guiding you on your wellness journey. Each instructor brings years of experience, a deep knowledge of yoga, and a unique teaching style that ensures every class feels supportive, engaging, and inspiring. They prioritize your comfort and growth, offering personalized adjustments and encouragement to help you achieve balance, strength, and inner peace. With their warmth and expertise, our instructors make yoga accessible for all levels, from beginners to seasoned practitioners. Join us and experience the difference of learning with the best! 🌟🧘‍♀️ </p>
+            <br>
+            <a href="#">Read more</a>
+            </div>
+            
+        </div>
+
+        <div class="inner-instructor">
+            <img src="images/Instructer.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="our-instructor">
+    <div class="main-instructor">
+
+        <div class="inner-instructor">
+            <img src="images/new experience.png" alt="">
+        </div>
+
+        <div class="inner-instructor">
+            <div class="inner-content-instructor">
+                <h2>New<br> Experience</h2>
+            <p>Experience a new life through yoga—a journey where each breath brings you closer to inner peace, balance, and vitality. Yoga invites you to slow down, connect with your body, and discover a deeper sense of self, beyond the stress and noise of daily life. Whether you’re looking to build strength, find calm, or explore mindfulness, yoga offers a path to renewed energy and clarity. Step onto the mat and let go of what no longer serves you. Embrace a life filled with awareness, joy, and purpose as you transform from the inside out. 🌿✨</p>
+            <br>
+            <a href="#">Read more</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="our-gallery">
+    <h1>gallery</h1>
+    <div class="main-gallery">
+        <div class="inner-gallery">
+            <img src="images/gallery1.jpg" alt="">
+        </div>
+
+        <div class="inner-gallery">
+            <img src="images/gallery2.jpg" alt="">
+        </div>
+
+        <div class="inner-gallery">
+            <img src="images/gallery3.jpg" alt="">
+        </div>
+
+        <div class="inner-gallery">
+            <img src="images/gallery4.jpg" alt="">
+        </div>
+
+        <div class="inner-gallery">
+            <img src="images/gallery5.jpg" alt="">
+        </div>
+
+        <div class="inner-gallery">
+            <img src="images/gallery6.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+
+<div class="our-prices">
+    <h1>prices</h1>
+    <div class="main-prices">
+        <div class="inner-prices">
+            <h2>Newbie classes</h2>
+            <h3>prices : $200.00/</h3>
+            <div class="price-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <a href="#">Register now</a>
+        </div>
+
+        <div class="inner-prices">
+            <h2>Yin yoga classes</h2>
+            <h3>prices : $250.00/</h3>
+            <div class="price-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <a href="#">Register now</a>
+        </div>
+
+        <div class="inner-prices">
+            <h2>Mind body harmony classes</h2>
+            <h3>prices : $300.00/</h3>
+            <div class="price-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <a href="#">Register now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Us Section -->
+<div id="contactUsSection" class="contact-us" style="margin-top: 50px;">
+    <div class="main-contact">
+        <div class="inner-contact">
+            <h1>Contact Us</h1>
+            <div class="inner-form-contact">
+                <input type="text" placeholder="Your Name" id="nameInput">
+                <input type="email" placeholder="Your Email"  id="emailInput">
+                <textarea placeholder="Your Message" cols="30" rows="10" id="messageInput"></textarea>
+                <br><br>
+                <button type="submit" onclick="sendMessage()">Send Message</button>
+                <!-- Confirmation Message -->
+                <div id="confirmationMessage" style="display: none; margin-top: 20px; color: white; font-size:large;">
+                    Your message was sent!
+                    Thank you for contacting us!
+                </div>
+            </div>
+        </div>
+
+        <div class="inner-contact">
+            <img src="images/Instructer.png" alt="">
+        </div>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
